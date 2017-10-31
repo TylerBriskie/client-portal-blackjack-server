@@ -17,8 +17,9 @@ public class SetupController {
     }
 
     @RequestMapping("/resetHand/")
-    public void resetHand(){
+    public String resetHand(){
         setupService.resetHand();
+        return "Jeez, thanks for doing the Men In Black Flashly Thingy";
     }
 
     @RequestMapping("/getCurrentHand")
