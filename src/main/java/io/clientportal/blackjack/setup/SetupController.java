@@ -13,7 +13,7 @@ public class SetupController {
 
     @RequestMapping("/gimme")
     public String getFirstCards(){
-        return "BlackJack!!";
+        return "BlackJack Gimme More!!";
     }
 
     @RequestMapping("/getCurrentHand")
