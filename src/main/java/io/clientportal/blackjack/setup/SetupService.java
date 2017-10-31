@@ -10,6 +10,10 @@ public class SetupService {
 
     public List<StateOfHand> currentHand = new ArrayList<StateOfHand>();
 
+    public void resetHand(){
+        currentHand.clear();
+    }
+
     public List<StateOfHand> getCurrentHand(){
         return currentHand;
     }
@@ -52,7 +56,6 @@ public class SetupService {
                 String oneDeck[] = cards.getStandardCardDeck();
                 String oneCard = oneDeck[(int)(Math.random()*52)];
                 player.hand.setCards(oneCard);
-                System.out.println("Hello World");
                 return currentHand;
             }
         }
