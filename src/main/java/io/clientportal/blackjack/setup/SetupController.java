@@ -37,5 +37,9 @@ public class SetupController {
         return setupService.hitOneCard(playerId);
     }
 
+    @RequestMapping(value="/handComplete/", method = RequestMethod.POST)
+    public List<StateOfHand> handComplete(){
+        return setupService.handComplete();
+    }
 
 }

@@ -9,6 +9,8 @@ import java.util.List;
 public class SetupService {
 
     public List<StateOfHand> currentHand = new ArrayList<StateOfHand>();
+    public CalculateHand calculateHand = new CalculateHand();
+    private int bust = 21;
 
     public void resetHand(){
         currentHand.clear();
@@ -49,7 +51,6 @@ public class SetupService {
     }
 
     public List<StateOfHand> hitOneCard(int id){
-        StateOfHand currentPlayer = new StateOfHand();
         for (StateOfHand player:currentHand){
             if(player.getId() == id){
                 Cards cards = new Cards();
@@ -58,6 +59,26 @@ public class SetupService {
                 player.hand.setCards(oneCard);
                 return currentHand;
             }
+        }
+        return currentHand;
+    }
+
+    public List<StateOfHand> handComplete(){
+
+        for (StateOfHand player:currentHand){
+
+            int currentHandValue = calculateHand.getHandTotal(player.hand.getCards());
+
+//            if(currentHandValue > bust){
+//                lose;
+//            } else if (currentHandValue > (dealerHand > bust ? 0 : dealerHand)){
+//                win;
+//            } else if (currentHandValue == dealerHand){
+//                tie;
+//            } else {
+//                win?;
+//            }
+
         }
         return currentHand;
     }
