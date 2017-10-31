@@ -23,10 +23,15 @@ public class SetupController {
         return setupService.getFirsthand();
     }
 
-    @RequestMapping("/setup/{numPlayers}")
-    public List<StateOfHand> setFirstHand(@PathVariable int numPlayers) {
-        return setupService.setFirstHand(numPlayers);
+    @RequestMapping("/getCurrentHand")
+    public List<StateOfHand> getCurrentHand(){
+        return setupService.getCurrentHand();
     }
+
+//    @RequestMapping("/setup/{numPlayers}")
+//    public List<StateOfHand> setFirstHand(@PathVariable int numPlayers) {
+//        return setupService.setFirstHand(numPlayers);
+//    }
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/setup/")

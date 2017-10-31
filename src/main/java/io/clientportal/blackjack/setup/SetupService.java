@@ -12,44 +12,50 @@ import java.util.List;
 @Service
 public class SetupService {
 
+    public List<StateOfHand> currentHand = new ArrayList<StateOfHand>();
+
     public StateOfHand getFirsthand(){
         StateOfHand currentHand = new StateOfHand(1, "Billy");
         return currentHand;
     }
 
-    public List<StateOfHand> setFirstHand(int numPlayers){
-
-        Cards cards = new Cards();
-        String oneDeck[] = cards.getStandardCardDeck();
-
-        String players[] = {"John", "Bill", "Dave", "Kevin"};
-        int playersBets[] = {50, 20, 100, 35};
-
-
-
-        List<StateOfHand> currentHand = new ArrayList<StateOfHand>();
-
-        String handPlayed = oneDeck[(int)(Math.random()*52)];
-        Dealer dealer = new Dealer(0);
-        dealer.hand.setCards(handPlayed);
-        handPlayed = oneDeck[(int)(Math.random()*52)];
-        dealer.hand.setCards(handPlayed);
-        currentHand.add(dealer);
-
-
-        for (int i = 0; i < players.length; i++) {
-
-            StateOfHand newPlayer = new StateOfHand((i + 1), players[i]);
-
-            newPlayer.hand.setCards(handPlayed);
-            handPlayed = oneDeck[(int)(Math.random()*52)];
-            newPlayer.hand.setCards(handPlayed);
-            newPlayer.hand.setBetPlaced(playersBets[i]);
-            currentHand.add(newPlayer);
-        }
+    public List<StateOfHand> getCurrentHand(){
         return currentHand;
-
     }
+
+//    public List<StateOfHand> setFirstHand(int numPlayers){
+//
+//        Cards cards = new Cards();
+//        String oneDeck[] = cards.getStandardCardDeck();
+//
+//        String players[] = {"John", "Bill", "Dave", "Kevin"};
+//        int playersBets[] = {50, 20, 100, 35};
+//
+//
+//
+//        List<StateOfHand> currentHand = new ArrayList<StateOfHand>();
+//
+//        String handPlayed = oneDeck[(int)(Math.random()*52)];
+//        Dealer dealer = new Dealer(0);
+//        dealer.hand.setCards(handPlayed);
+//        handPlayed = oneDeck[(int)(Math.random()*52)];
+//        dealer.hand.setCards(handPlayed);
+//        currentHand.add(dealer);
+//
+//
+//        for (int i = 0; i < players.length; i++) {
+//
+//            StateOfHand newPlayer = new StateOfHand((i + 1), players[i]);
+//
+//            newPlayer.hand.setCards(handPlayed);
+//            handPlayed = oneDeck[(int)(Math.random()*52)];
+//            newPlayer.hand.setCards(handPlayed);
+//            newPlayer.hand.setBetPlaced(playersBets[i]);
+//            currentHand.add(newPlayer);
+//        }
+//        return currentHand;
+//
+//    }
 
     public List<StateOfHand> setFirstHandPost(List<Player> players){
 
@@ -62,7 +68,6 @@ public class SetupService {
         handPlayed = oneDeck[(int)(Math.random()*52)];
         dealer.hand.setCards(handPlayed);
 
-        List<StateOfHand> currentHand = new ArrayList<StateOfHand>();
         currentHand.add(dealer);
 
         for (Player player:players) {
