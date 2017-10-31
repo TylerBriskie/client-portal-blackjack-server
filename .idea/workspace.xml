@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="035a4764-6405-41de-a0bf-6eb0d8577547" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/derby.log" afterPath="$PROJECT_DIR$/derby.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/BlackjackApplication.java" afterPath="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/BlackjackApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/Cards.java" afterPath="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/Cards.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupController.java" afterPath="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupService.java" afterPath="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupService.java" />
     </list>
@@ -19,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SetupController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SetupController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="25" column="36" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="36" />
+            <state relative-caret-position="271">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#347#348#0" expanded="true" />
@@ -41,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/StateOfHand.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
-              <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding>
                 <element signature="e#608#609#0" expanded="true" />
                 <element signature="e#633#634#0" expanded="true" />
@@ -68,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/Player.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
               <folding>
                 <element signature="e#368#369#0" expanded="true" />
                 <element signature="e#393#394#0" expanded="true" />
@@ -87,16 +84,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SetupService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SetupService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="-550">
+              <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#392#405#0" expanded="true" />
-                <element signature="e#592#593#0" expanded="true" />
-                <element signature="e#626#627#0" expanded="true" />
+                <element signature="e#455#456#0" expanded="true" />
+                <element signature="e#489#490#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -221,9 +218,9 @@
         <option value="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/StateOfHand.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/Cards.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupController.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/BlackjackApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupService.java" />
       </list>
     </option>
   </component>
@@ -429,12 +426,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1509388001407</updated>
-      <workItem from="1509388005429" duration="22363000" />
+      <workItem from="1509388005429" duration="22685000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22363000" />
+    <option name="totallyTimeSpent" value="22685000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
@@ -571,7 +568,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
           <folding>
             <element signature="e#368#369#0" expanded="true" />
             <element signature="e#393#394#0" expanded="true" />
@@ -592,7 +589,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/StateOfHand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding>
             <element signature="e#608#609#0" expanded="true" />
             <element signature="e#633#634#0" expanded="true" />
@@ -654,19 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#392#405#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#626#627#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/BlackjackApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -679,8 +663,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="25" column="36" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="36" />
+        <state relative-caret-position="271">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#347#348#0" expanded="true" />
@@ -689,6 +673,19 @@
             <element signature="e#532#533#0" expanded="true" />
             <element signature="e#619#620#0" expanded="true" />
             <element signature="e#671#672#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-550">
+          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#392#405#0" expanded="true" />
+            <element signature="e#455#456#0" expanded="true" />
+            <element signature="e#489#490#0" expanded="true" />
           </folding>
         </state>
       </provider>

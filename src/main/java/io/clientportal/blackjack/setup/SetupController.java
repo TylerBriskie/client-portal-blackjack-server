@@ -28,12 +28,6 @@ public class SetupController {
         return setupService.getCurrentHand();
     }
 
-//    @RequestMapping("/setup/{numPlayers}")
-//    public List<StateOfHand> setFirstHand(@PathVariable int numPlayers) {
-//        return setupService.setFirstHand(numPlayers);
-//    }
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/setup/")
     public List<StateOfHand> setFirstHandPost(@RequestBody List<Player> players) {
         return setupService.setFirstHandPost(players);
