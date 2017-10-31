@@ -1,9 +1,5 @@
 package io.clientportal.blackjack.setup;
 
-//import com.google.gson.JsonObject;
-//import com.google.gson.JsonParser;
-import com.fasterxml.jackson.core.json.JsonReadContext;
-import com.google.gson.*;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -44,11 +40,23 @@ public class SetupService {
             personToSet.hand.setCards(handPlayed);
             //adding to current hand
             currentHand.add(personToSet);
-
         }
-
         return currentHand;
+    }
 
+    public List<StateOfHand> hitOneCard(int id){
+        StateOfHand currentPlayer = new StateOfHand();
+        for (StateOfHand player:currentHand){
+            if(player.getId() == id){
+                Cards cards = new Cards();
+                String oneDeck[] = cards.getStandardCardDeck();
+                String oneCard = oneDeck[(int)(Math.random()*52)];
+                player.hand.setCards(oneCard);
+                System.out.println("Hello World");
+                return currentHand;
+            }
+        }
+        return currentHand;
     }
 
 }
