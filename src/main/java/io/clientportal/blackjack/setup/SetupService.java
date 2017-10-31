@@ -1,5 +1,6 @@
 package io.clientportal.blackjack.setup;
 
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ public class SetupService {
     public List<StateOfHand> currentHand = new ArrayList<StateOfHand>();
     public CalculateHand calculateHand = new CalculateHand();
     private int bust = 21;
+    private int dealerHand;
 
     public void resetHand(){
         currentHand.clear();
@@ -40,6 +42,7 @@ public class SetupService {
             personToSet.setId(player.getId());
             personToSet.hand.setBetPlaced(player.getFirstBetAmount());
             //giving two cards
+            //make a func for getOneCard and getTwoCards? Pass the Player's Hand
             handPlayed = oneDeck[(int)(Math.random()*52)];
             personToSet.hand.setCards(handPlayed);
             handPlayed = oneDeck[(int)(Math.random()*52)];
@@ -64,21 +67,29 @@ public class SetupService {
     }
 
     public List<StateOfHand> handComplete(){
+        //need to parse this into Dealer's hand "dealerHand" and Players Hands
+        //still need to remove the dealer or put into a new List<StateOfHand> with
+        //only the players
+        for (StateOfHand whoIsDealer:currentHand){
+            if (whoIsDealer.getName().equals("Dealer")){
+                dealerHand = calculateHand.getHandTotal(whoIsDealer.hand.getCards());
+                //find a way to remove the dealer from this object would be perfect
+            }
+        }
 
         for (StateOfHand player:currentHand){
 
             int currentHandValue = calculateHand.getHandTotal(player.hand.getCards());
 
-//            if(currentHandValue > bust){
-//                lose;
-//            } else if (currentHandValue > (dealerHand > bust ? 0 : dealerHand)){
-//                win;
-//            } else if (currentHandValue == dealerHand){
-//                tie;
-//            } else {
-//                win?;
-//            }
-
+            if(currentHandValue > bust){
+                System.out.println("YOU LOSE");
+            } else if (currentHandValue > (dealerHand > bust ? 0 : dealerHand)){
+                System.out.println("winner winner");
+            } else if (currentHandValue == dealerHand){
+                System.out.println("this feels like a push");
+            } else {
+                System.out.println("you didn't bust, but you still suck");
+            }
         }
         return currentHand;
     }
