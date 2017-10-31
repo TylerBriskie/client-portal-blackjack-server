@@ -16,12 +16,17 @@ public class SetupController {
         return "BlackJack Gimme More!!";
     }
 
+    @RequestMapping("/resetHand/")
+    public void resetHand(){
+        setupService.resetHand();
+    }
+
     @RequestMapping("/getCurrentHand")
     public List<StateOfHand> getCurrentHand(){
         return setupService.getCurrentHand();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/setup/")
+    @RequestMapping(value = "/setup/", method = RequestMethod.POST)
     public List<StateOfHand> setFirstHandPost(@RequestBody List<Player> players) {
         return setupService.setFirstHandPost(players);
     }
