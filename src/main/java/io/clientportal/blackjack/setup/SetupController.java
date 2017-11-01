@@ -11,7 +11,7 @@ public class SetupController {
     @Autowired
     private SetupService setupService;
 
-    @RequestMapping("/gimme")
+    @RequestMapping("/gimme/")
     public String getFirstCards(){
         return "BlackJack Gimme More!!";
     }
@@ -22,7 +22,7 @@ public class SetupController {
         return "Jeez, thanks for doing the Men In Black Flashly Thingy";
     }
 
-    @RequestMapping("/getCurrentHand")
+    @RequestMapping("/getCurrentHand/")
     public List<StateOfHand> getCurrentHand(){
         return setupService.getCurrentHand();
     }

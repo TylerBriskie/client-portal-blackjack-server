@@ -1,6 +1,7 @@
 package io.clientportal.blackjack.setup;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Hand {
@@ -16,9 +17,11 @@ public class Hand {
         return cards;
     }
 
-    public void setCards(String card) {
+    public void setOneCard(String card) {
         this.cards.add(card);
     }
+
+    public void setTwoCards(Collection<String> cards) {this.cards.addAll(0, cards);}
 
     public void clearCards(){this.cards = new ArrayList<String>();}
 

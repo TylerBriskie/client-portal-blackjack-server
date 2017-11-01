@@ -1,6 +1,5 @@
 package io.clientportal.blackjack.setup;
 
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -29,9 +28,9 @@ public class SetupService {
 
         String handPlayed = oneDeck[(int)(Math.random()*52)];
         Dealer dealer = new Dealer(0);
-        dealer.hand.setCards(handPlayed);
+        dealer.hand.setOneCard(handPlayed);
         handPlayed = oneDeck[(int)(Math.random()*52)];
-        dealer.hand.setCards(handPlayed);
+        dealer.hand.setOneCard(handPlayed);
 
         currentHand.add(dealer);
 
@@ -44,9 +43,9 @@ public class SetupService {
             //giving two cards
             //make a func for getOneCard and getTwoCards? Pass the Player's Hand
             handPlayed = oneDeck[(int)(Math.random()*52)];
-            personToSet.hand.setCards(handPlayed);
+            personToSet.hand.setOneCard(handPlayed);
             handPlayed = oneDeck[(int)(Math.random()*52)];
-            personToSet.hand.setCards(handPlayed);
+            personToSet.hand.setOneCard(handPlayed);
             //adding to current hand
             currentHand.add(personToSet);
         }
@@ -59,7 +58,7 @@ public class SetupService {
                 Cards cards = new Cards();
                 String oneDeck[] = cards.getStandardCardDeck();
                 String oneCard = oneDeck[(int)(Math.random()*52)];
-                player.hand.setCards(oneCard);
+                player.hand.setOneCard(oneCard);
                 return currentHand;
             }
         }

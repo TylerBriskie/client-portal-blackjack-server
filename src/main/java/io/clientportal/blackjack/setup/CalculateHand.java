@@ -16,10 +16,8 @@ public class CalculateHand {
             if (    currentCard.equals("0") ||
                     currentCard.equals("J") ||
                     currentCard.equals("Q") ||
-                    currentCard.equals("K") ){
-                currentCard = "10";
-
-            } else if (currentCard.equals("A")){
+                    currentCard.equals("K") ){ currentCard = "10"; }
+            if (currentCard.equals("A")){
                 currentCard = "11";
             }
             total += Integer.parseInt(currentCard);
