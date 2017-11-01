@@ -56,7 +56,7 @@ public class SetupService {
         dealer.hand.setOneCard(handPlayed);
 
         currentHand.add(dealer);
-        
+
         return currentHand;
     }
 
@@ -84,7 +84,7 @@ public class SetupService {
         handPlayed = oneDeck[(int)(Math.random()*52)];
         dealer.hand.setOneCard(handPlayed);
 
-        currentHand.add(0, dealer);
+        currentHand.add(dealer);
 
         return currentHand;
     }
@@ -110,7 +110,7 @@ public class SetupService {
             }
         }
 
-        currentHand.remove(0);
+        currentHand.remove(currentHand.size()-1);
 
         for (StateOfHand player:currentHand){
 
