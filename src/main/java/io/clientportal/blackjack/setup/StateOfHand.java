@@ -55,7 +55,7 @@ public class StateOfHand {
     }
 
     public void setBankRoll(int bankRoll) {
-        this.bankRoll = 100;
+        this.bankRoll = bankRoll;
     }
 
 }

@@ -67,29 +67,34 @@ public class SetupService {
     }
 
     public List<StateOfHand> handComplete(){
-        //need to parse this into Dealer's hand "dealerHand" and Players Hands
-        //still need to remove the dealer or put into a new List<StateOfHand> with
-        //only the players
+
         for (StateOfHand whoIsDealer:currentHand){
             if (whoIsDealer.getName().equals("Dealer")){
                 dealerHand = calculateHand.getHandTotal(whoIsDealer.hand.getCards());
-                //find a way to remove the dealer from this object would be perfect
             }
         }
 
+        currentHand.remove(0);
+
         for (StateOfHand player:currentHand){
 
+            System.out.println(player.getName());
             int currentHandValue = calculateHand.getHandTotal(player.hand.getCards());
 
             if(currentHandValue > bust){
+                player.setBankRoll(player.getBankRoll() - player.hand.getBetPlaced());
                 System.out.println("YOU LOSE");
             } else if (currentHandValue > (dealerHand > bust ? 0 : dealerHand)){
-                System.out.println("winner winner");
+                player.setBankRoll(player.getBankRoll() + player.hand.getBetPlaced());
+                System.out.println("Winner Winner Chicken Dinner");
             } else if (currentHandValue == dealerHand){
                 System.out.println("this feels like a push");
             } else {
-                System.out.println("you didn't bust, but you still suck");
+                player.setBankRoll(player.getBankRoll() - player.hand.getBetPlaced());
+                System.out.println("you didn't bust, but you still lose");
             }
+            player.hand.setBetPlaced(0);
+            player.hand.clearCards();
         }
         return currentHand;
     }

@@ -20,6 +20,8 @@ public class Hand {
         this.cards.add(card);
     }
 
+    public void clearCards(){this.cards = new ArrayList<String>();}
+
     public int getBetPlaced() {
         return betPlaced;
     }
