@@ -12,16 +12,14 @@ public class SetupService {
     public CalculateHand calculateHand = new CalculateHand();
 
     public Cards cards = new Cards();
-    public List<String> oneDeck = cards.getStandardCardDeck();
-//    public List<String> newDeck = cards.getStandardCardDeck();
+    public List<String> currentDeck = cards.getStandardCardDeck();
 
     int bust = 21;
     private int dealerHandValue;
 
     public void resetHand(){
         currentHand.clear();
-        oneDeck.clear();
-        oneDeck.addAll(cards.getStandardCardDeck());
+        resetCardDeck();
     }
 
     public List<StateOfHand> getCurrentHand(){
@@ -32,6 +30,9 @@ public class SetupService {
 
         //checking to see if they are still playing with the same players
         if (currentHand.size() != 0) {
+            if (currentDeck.size() < (52*0.2)){
+                resetCardDeck();
+            }
             return nextHand(players);
         }
 
@@ -42,15 +43,15 @@ public class SetupService {
             personToSet.setId(player.getId());
             personToSet.hand.setBetPlaced(player.getFirstBetAmount());
             //giving two cards
-            personToSet.hand.setOneCard(oneDeck, cards.returnOneRandomCard(oneDeck));
-            personToSet.hand.setOneCard(oneDeck, cards.returnOneRandomCard(oneDeck));
+            personToSet.hand.setOneCard(currentDeck, cards.returnOneRandomCard(currentDeck));
+            personToSet.hand.setOneCard(currentDeck, cards.returnOneRandomCard(currentDeck));
             //adding to current hand
             currentHand.add(personToSet);
         }
 
         Dealer dealer = new Dealer(0);
-        dealer.hand.setOneCard(oneDeck, cards.returnOneRandomCard(oneDeck));
-        dealer.hand.setOneCard(oneDeck, cards.returnOneRandomCard(oneDeck));
+        dealer.hand.setOneCard(currentDeck, cards.returnOneRandomCard(currentDeck));
+        dealer.hand.setOneCard(currentDeck, cards.returnOneRandomCard(currentDeck));
 
         currentHand.add(dealer);
 
@@ -62,8 +63,8 @@ public class SetupService {
 
         //adding cards
         for (StateOfHand player:currentHand){
-            player.hand.setOneCard(oneDeck, cards.returnOneRandomCard(oneDeck));
-            player.hand.setOneCard(oneDeck, cards.returnOneRandomCard(oneDeck));
+            player.hand.setOneCard(currentDeck, cards.returnOneRandomCard(currentDeck));
+            player.hand.setOneCard(currentDeck, cards.returnOneRandomCard(currentDeck));
         }
 
         //setting new bets
@@ -72,8 +73,8 @@ public class SetupService {
         }
 
         Dealer dealer = new Dealer(0);
-        dealer.hand.setOneCard(oneDeck, cards.returnOneRandomCard(oneDeck));
-        dealer.hand.setOneCard(oneDeck, cards.returnOneRandomCard(oneDeck));
+        dealer.hand.setOneCard(currentDeck, cards.returnOneRandomCard(currentDeck));
+        dealer.hand.setOneCard(currentDeck, cards.returnOneRandomCard(currentDeck));
 
         currentHand.add(dealer);
 
@@ -84,7 +85,7 @@ public class SetupService {
         for (StateOfHand player:currentHand){
             if(player.getId() == id){
                 Cards cards = new Cards();
-                player.hand.setOneCard(oneDeck, cards.returnOneRandomCard(oneDeck));
+                player.hand.setOneCard(currentDeck, cards.returnOneRandomCard(currentDeck));
                 return currentHand;
             }
         }
@@ -122,6 +123,11 @@ public class SetupService {
             player.hand.clearCards();
         }
         return currentHand;
+    }
+
+    public void resetCardDeck(){
+        currentDeck.clear();
+        currentDeck.addAll(cards.getStandardCardDeck());
     }
 
 }

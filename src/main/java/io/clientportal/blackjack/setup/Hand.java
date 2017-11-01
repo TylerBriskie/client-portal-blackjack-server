@@ -1,8 +1,10 @@
 package io.clientportal.blackjack.setup;
+//package io.clientportal.blackjack.setup.SetupService;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+//import class SetupService;
 
 public class Hand {
 
@@ -46,5 +48,6 @@ public class Hand {
     public void setSplitHand(SplitHand splitHand) {
         this.splitHand = splitHand;
     }
+
 
 }
