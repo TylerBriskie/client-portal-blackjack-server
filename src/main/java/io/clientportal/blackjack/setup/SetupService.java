@@ -32,12 +32,7 @@ public class SetupService {
         String oneDeck[] = cards.getStandardCardDeck();
 
         String handPlayed = oneDeck[(int)(Math.random()*52)];
-        Dealer dealer = new Dealer(0);
-        dealer.hand.setOneCard(handPlayed);
-        handPlayed = oneDeck[(int)(Math.random()*52)];
-        dealer.hand.setOneCard(handPlayed);
 
-        currentHand.add(dealer);
 
         for (Player player:players) {
             StateOfHand personToSet = new StateOfHand();
@@ -54,6 +49,14 @@ public class SetupService {
             //adding to current hand
             currentHand.add(personToSet);
         }
+
+        Dealer dealer = new Dealer(0);
+        dealer.hand.setOneCard(handPlayed);
+        handPlayed = oneDeck[(int)(Math.random()*52)];
+        dealer.hand.setOneCard(handPlayed);
+
+        currentHand.add(dealer);
+        
         return currentHand;
     }
 
