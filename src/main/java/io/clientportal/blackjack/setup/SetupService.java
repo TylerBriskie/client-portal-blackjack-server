@@ -11,7 +11,7 @@ public class SetupService {
     public List<StateOfHand> currentHand = new ArrayList<StateOfHand>();
     public CalculateHand calculateHand = new CalculateHand();
     private int bust = 21;
-    private int dealerHand;
+    private int dealerHandValue;
 
     public void resetHand(){
         currentHand.clear();
@@ -22,6 +22,11 @@ public class SetupService {
     }
 
     public List<StateOfHand> setFirstHandPost(List<Player> players){
+
+        if (currentHand.size() != 0) {
+            System.out.println("I'm NOT empty");
+            return nextHand(players);
+        }
 
         Cards cards = new Cards();
         String oneDeck[] = cards.getStandardCardDeck();
@@ -52,6 +57,29 @@ public class SetupService {
         return currentHand;
     }
 
+    public List<StateOfHand> nextHand(List<Player> players){
+
+        Cards cards = new Cards();
+        String oneDeck[] = cards.getStandardCardDeck();
+        String handPlayed = oneDeck[(int)(Math.random()*52)];
+
+        for (StateOfHand player:currentHand){
+            handPlayed = oneDeck[(int)(Math.random()*52)];
+            player.hand.setOneCard(handPlayed);
+            handPlayed = oneDeck[(int)(Math.random()*52)];
+            player.hand.setOneCard(handPlayed);
+        }
+
+        Dealer dealer = new Dealer(0);
+        dealer.hand.setOneCard(handPlayed);
+        handPlayed = oneDeck[(int)(Math.random()*52)];
+        dealer.hand.setOneCard(handPlayed);
+
+        currentHand.add(0, dealer);
+
+        return currentHand;
+    }
+
     public List<StateOfHand> hitOneCard(int id){
         for (StateOfHand player:currentHand){
             if(player.getId() == id){
@@ -69,7 +97,7 @@ public class SetupService {
 
         for (StateOfHand whoIsDealer:currentHand){
             if (whoIsDealer.getName().equals("Dealer")){
-                dealerHand = calculateHand.getHandTotal(whoIsDealer.hand.getCards());
+                dealerHandValue = calculateHand.getHandTotal(whoIsDealer.hand.getCards());
             }
         }
 
@@ -83,10 +111,10 @@ public class SetupService {
             if(currentHandValue > bust){
                 player.setBankRoll(player.getBankRoll() - player.hand.getBetPlaced());
                 System.out.println("YOU LOSE");
-            } else if (currentHandValue > (dealerHand > bust ? 0 : dealerHand)){
+            } else if (currentHandValue > (dealerHandValue > bust ? 0 : dealerHandValue)){
                 player.setBankRoll(player.getBankRoll() + player.hand.getBetPlaced());
                 System.out.println("Winner Winner Chicken Dinner");
-            } else if (currentHandValue == dealerHand){
+            } else if (currentHandValue == dealerHandValue){
                 System.out.println("this feels like a push");
             } else {
                 player.setBankRoll(player.getBankRoll() - player.hand.getBetPlaced());

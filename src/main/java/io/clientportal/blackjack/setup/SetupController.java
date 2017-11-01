@@ -37,6 +37,11 @@ public class SetupController {
         return setupService.hitOneCard(playerId);
     }
 
+    @RequestMapping(value = "/nextHand/", method = RequestMethod.POST)
+    public List<StateOfHand> nextHand(@RequestBody List<Player> players){
+        return setupService.nextHand(players);
+    }
+
     @RequestMapping(value="/handComplete/", method = RequestMethod.POST)
     public List<StateOfHand> handComplete(){
         return setupService.handComplete();
