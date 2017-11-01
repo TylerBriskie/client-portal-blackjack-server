@@ -9,7 +9,6 @@ public class Hand {
     private List<String> cards = new ArrayList<String>();
     private int betPlaced;
     private SplitHand splitHand = null;
-//    private SplitHand splitHand = new SplitHand();
 
     public Hand(){}
 
@@ -17,8 +16,15 @@ public class Hand {
         return cards;
     }
 
-    public void setOneCard(String card) {
+    public void setOneCard(List<String> deck, String card) {
         this.cards.add(card);
+        System.out.println(deck.size());
+        for (int i = 0; i < deck.size(); i++ ){
+            if (deck.get(i).equals(card)){
+                deck.remove(i);
+            }
+        }
+
     }
 
     public void setTwoCards(Collection<String> cards) {this.cards.addAll(0, cards);}
