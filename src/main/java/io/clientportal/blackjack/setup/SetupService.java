@@ -23,8 +23,8 @@ public class SetupService {
 
     public List<StateOfHand> setFirstHandPost(List<Player> players){
 
+        //checking to see if they are still playing with the same players
         if (currentHand.size() != 0) {
-            System.out.println("I'm NOT empty");
             return nextHand(players);
         }
 
@@ -63,11 +63,17 @@ public class SetupService {
         String oneDeck[] = cards.getStandardCardDeck();
         String handPlayed = oneDeck[(int)(Math.random()*52)];
 
+        //adding cards
         for (StateOfHand player:currentHand){
             handPlayed = oneDeck[(int)(Math.random()*52)];
             player.hand.setOneCard(handPlayed);
             handPlayed = oneDeck[(int)(Math.random()*52)];
             player.hand.setOneCard(handPlayed);
+        }
+
+        //setting new bets
+        for (int i = 0; i < players.size(); i++){
+            currentHand.get(i).hand.setBetPlaced(players.get(i).getFirstBetAmount());
         }
 
         Dealer dealer = new Dealer(0);
