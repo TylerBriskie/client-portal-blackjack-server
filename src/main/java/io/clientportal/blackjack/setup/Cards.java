@@ -16,11 +16,15 @@ public class Cards {
             "AS", "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "0S", "JS", "QS", "KS"
     };
 
-    public List<String> getStandardCardDeck() {
+    public List<String> getStandardCardDeck(int n) {
 
-        for (int i = 0; i < cardDeckPerminent.length; i++) {
-            this.standardCardDeck.add(cardDeckPerminent[i]);
+        while (n >= 1){
+            for (int i = 0; i < cardDeckPerminent.length; i++) {
+                this.standardCardDeck.add(cardDeckPerminent[i]);
+            }
+            n--;
         }
+
         return standardCardDeck;
     }
 

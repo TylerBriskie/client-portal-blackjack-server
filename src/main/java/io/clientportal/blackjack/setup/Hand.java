@@ -20,16 +20,19 @@ public class Hand {
 
     public void setOneCard(List<String> deck, String card) {
         this.cards.add(card);
-        System.out.println(deck.size());
         for (int i = 0; i < deck.size(); i++ ){
             if (deck.get(i).equals(card)){
                 deck.remove(i);
+                break;
             }
         }
 
     }
 
-    public void setTwoCards(Collection<String> cards) {this.cards.addAll(0, cards);}
+    public void setTwoCards(List<String> deck, String card1, String card2) {
+        setOneCard(deck, card1);
+        setOneCard(deck, card2);
+    }
 
     public void clearCards(){this.cards = new ArrayList<String>();}
 
