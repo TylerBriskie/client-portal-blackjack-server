@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="035a4764-6405-41de-a0bf-6eb0d8577547" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/derby.log" afterPath="$PROJECT_DIR$/derby.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/Cards.java" afterPath="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/Cards.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/Hand.java" afterPath="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/Hand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupService.java" afterPath="$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupService.java" />
-    </list>
+    <list default="true" id="035a4764-6405-41de-a0bf-6eb0d8577547" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,8 +52,8 @@
       <file leaf-file-name="SetupService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="118" column="37" lean-forward="true" selection-start-line="118" selection-start-column="37" selection-end-line="118" selection-end-column="37" />
+            <state relative-caret-position="128">
+              <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#236#249#0" expanded="true" />
@@ -373,12 +368,12 @@
       <option name="presentableId" value="Default" />
       <updated>1509388001407</updated>
       <workItem from="1509388005429" duration="25512000" />
-      <workItem from="1509483271781" duration="32532000" />
+      <workItem from="1509483271781" duration="32972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59979000" />
+    <option name="totallyTimeSpent" value="60419000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
@@ -902,8 +897,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/clientportal/blackjack/setup/SetupService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="118" column="37" lean-forward="true" selection-start-line="118" selection-start-column="37" selection-end-line="118" selection-end-column="37" />
+        <state relative-caret-position="128">
+          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#236#249#0" expanded="true" />
