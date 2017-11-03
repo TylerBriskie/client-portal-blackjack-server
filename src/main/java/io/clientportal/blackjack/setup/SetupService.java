@@ -103,7 +103,10 @@ public class SetupService {
             System.out.println(player.getName());
             int currentHandValue = calculateHand.getHandTotal(player.hand.getCards(), player.getName());
 
-            if(currentHandValue > bust){
+            if (currentHandValue == 21 && player.hand.getCards().size() == 2){
+                player.setBankRoll((int)(player.getBankRoll() + (player.hand.getBetPlaced()* 1.5)));
+                System.out.println("BLACKJACK");
+            } else if(currentHandValue > bust){
                 player.setBankRoll(player.getBankRoll() - player.hand.getBetPlaced());
                 System.out.println("YOU LOSE");
             } else if (currentHandValue > (dealerHandValue > bust ? 0 : dealerHandValue)){
@@ -117,6 +120,7 @@ public class SetupService {
             }
             player.hand.setBetPlaced(0);
             player.hand.clearCards();
+
         }
         return currentHand;
     }

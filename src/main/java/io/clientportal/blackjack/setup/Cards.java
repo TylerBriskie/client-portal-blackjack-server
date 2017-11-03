@@ -28,27 +28,11 @@ public class Cards {
         return standardCardDeck;
     }
 
-//    public void setStandardCardDeck(List<String> standardCardDeck) {
-//        for (int i = 0; i < cardDeckPerminent.length; i++) {
-//            this.standardCardDeck.add(cardDeckPerminent[i]);
-//        }
-//    }
-
-//    private List<String> customSizeDeck = new ArrayList<String>();
-
 
     public String returnOneRandomCard(List<String> deck){
         int tempVar = (int)(Math.random()*(deck.size()));
         return deck.get(tempVar);
     }
-
-//    public Cards(int numDecks){
-//        super();
-//        Cards shoe = new Cards;
-//        for (int i = 0; i < numDecks; i++){
-//            ArrayUtils
-//            customSizeDeck.add(standardCardDeck);
-//        }
 
 }
 
