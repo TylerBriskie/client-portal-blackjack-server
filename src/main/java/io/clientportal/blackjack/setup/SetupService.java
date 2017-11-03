@@ -86,13 +86,13 @@ public class SetupService {
             }
         }
         return currentHand;
-    }
+    };
 
     public List<StateOfHand> handComplete(){
 
         for (StateOfHand whoIsDealer:currentHand){
             if (whoIsDealer.getName().equals("Dealer")){
-                dealerHandValue = calculateHand.getHandTotal(whoIsDealer.hand.getCards());
+                dealerHandValue = calculateHand.getHandTotal(whoIsDealer.hand.getCards(), whoIsDealer.getName());
             }
         }
 
@@ -101,7 +101,7 @@ public class SetupService {
         for (StateOfHand player:currentHand){
 
             System.out.println(player.getName());
-            int currentHandValue = calculateHand.getHandTotal(player.hand.getCards());
+            int currentHandValue = calculateHand.getHandTotal(player.hand.getCards(), player.getName());
 
             if(currentHandValue > bust){
                 player.setBankRoll(player.getBankRoll() - player.hand.getBetPlaced());
