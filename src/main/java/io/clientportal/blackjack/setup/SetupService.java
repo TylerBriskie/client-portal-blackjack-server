@@ -127,7 +127,7 @@ public class SetupService {
 
     public void resetCardDeck(){
         currentDeck.clear();
-        currentDeck.addAll(cards.getStandardCardDeck(1));
+        currentDeck.addAll(cards.getStandardCardDeck(2));
     }
 
 }

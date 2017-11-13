@@ -25,6 +25,7 @@ public class CalculateHand {
             total += Integer.parseInt(currentCard);
 
             if (total > 21 && aceCount > 0){
+                aceCount--;
                 total -= 10;
             }
         }
